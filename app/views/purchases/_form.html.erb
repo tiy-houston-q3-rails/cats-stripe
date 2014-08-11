@@ -1,6 +1,14 @@
 <%= @purchase.errors.full_messages.join(",") %>
 
-<%= simple_form_for @purchase, url: purchases_path(cat_id: @cat.id), remote: true do |f| %>
-  <%= f.input :purchaser_name, label: "Whats your name dude" %>
-  <%= f.submit class: "btn btn-success btn-large" %>
+<%= simple_form_for @purchase, url: purchases_path(cat_id: @cat.id) do |f| %>
+
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= ENV['STRIPE_KEY']%>"
+    data-image="<%= asset_url 'logo.png' %>"
+    data-name="Cats!!!!1!"
+    data-address="true"
+    data-description="<%= @cat.name %>"
+    data-amount="<%= @cat.price %>">
+  </script>
 <% end %>

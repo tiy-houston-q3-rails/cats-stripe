@@ -1,0 +1,18 @@
+<h1>THANKS BRO</h1>
+
+
+<table class="table">
+  <tr>
+    <th>Purchaser Name</th>
+    <th>Cat Name</th>
+    <th>Price</th>
+    <th colspan="2">Time</th>
+  </tr>
+  <tr>
+    <td><%= @purchase.purchaser_name %></td>
+    <td><%= @purchase.cat.name %></td>
+    <td><%= show_me_the_money @purchase  %></td>
+    <td><%= @purchase.created_at.strftime("%b %e, %Y %l:%M %p") %></td>
+    <td><%= distance_of_time_in_words(Time.now, @purchase.created_at) %> ago</td>
+
+</table>

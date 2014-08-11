@@ -41,6 +41,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.2.1)
     font-awesome-rails (4.0.3.1)
@@ -65,6 +70,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_magick (3.8.0)
+      subexec (~> 0.2.1)
     mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -117,7 +124,8 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
-    rmagick (2.13.2)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -142,6 +150,10 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.9)
+    stripe (1.8.3)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+    subexec (0.2.3)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -162,17 +174,19 @@ PLATFORMS
 DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
+  dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mini_magick
   pg
   rails (= 4.1.4)
   rails_12factor
   rails_admin
-  rmagick
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form (= 3.1.0.rc2)
   spring
   sqlite3
+  stripe
   turbolinks
   uglifier (>= 1.3.0)

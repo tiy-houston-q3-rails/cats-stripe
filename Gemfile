@@ -41,13 +41,17 @@ gem 'spring',        group: :development
 gem 'pg'
 gem 'rails_admin'
 gem 'carrierwave'
-gem 'rmagick', require: false
+# gem 'rmagick', require: false
+gem 'mini_magick'
 gem 'simple_form', "3.1.0.rc2"
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'stripe'

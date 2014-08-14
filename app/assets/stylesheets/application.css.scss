@@ -1,0 +1,13 @@
+@import "bourbon";
+@import "base/base";
+@import 'neat';
+@import 'cards';
+@import 'header';
+@import 'font';
+
+
+h2 {
+  font-size: 6rem !important;
+  text-align: center;
+  margin-bottom: 2rem !important;
+}

@@ -1,22 +1,28 @@
-<h1>Cloned Cats!</h1>
+<h2>Our cats!</h2>
 
-<button class="pull-right">Hide All Cats</button>
 
-<ul class="media-list">
-
+<div class="cards">
   <% @cats.each do |cat| %>
-    <li class="media" id="<%= cat.name.parameterize %>">
-      <%= link_to cat, class: "pull-left" do %>
-        <%= image_tag cat.photo.url(:thumb), class: "media-object "%>
-      <% end %>
-      <div class="media-body">
-        <h4 class="media-heading"><%= cat.name %></h4>
-        <p>
-          Gender: <%= cat.gender %><br/>
-          Color: <%= cat.color %>
-        </p>
+    <div class="card">
+      <div class="card-image">
+        <%= link_to cat do %>
+          <%= image_tag cat.photo.url(:thumb) %>
+        <% end %>
       </div>
-    </li>
+      <div class="card-header">
+        <%= cat.name %>
+      </div>
+      <div class="card-copy">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+      </div>
+      <div class="card-stats">
+        <ul>
+          <li><%= show_me_the_money cat %><span>Price</span></li>
+          <li><%= cat.color %><span>Color</span></li>
+          <li><%= cat.gender %><span>Gender</span></li>
+        </ul>
+      </div>
+    </div>
   <% end %>
 
-</ul>
+</div>
